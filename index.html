@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="static/nigeerhuox16.ico.jpg">
@@ -8,65 +9,87 @@
     <title>汤大宝&陈小宝</title>
     <link rel="stylesheet" href="./static/style.css">
 </head>
+
 <body>
 
-<audio class="song-audio-autoplay" controls loop style="display: none;visibility: hidden">
-    <source src="static/wanan-yanrenzhong.mp3"></source>
-    Your browser isn't invited for super fun audio time.
-</audio>
-<style type="text/css">
-    .rotateImages{
-        -webkit-animation:myRotate 10s linear infinite;
-        animation:myRotate 10s linear infinite;
-    }
-    @-webkit-keyframes myRotate{
-        0%{ -webkit-transform: rotate(0deg);}
-        50%{ -webkit-transform: rotate(180deg);}
-        100%{ -webkit-transform: rotate(360deg);}
-    }
-    @keyframes myRotate{
-        0%{ -webkit-transform: rotate(0deg);}
-        50%{ -webkit-transform: rotate(180deg);}
-        100%{ -webkit-transform: rotate(360deg);}
-    }
-</style>
+    <audio class="song-audio-autoplay" controls loop style="display: none;visibility: hidden">
+        <source src="static/wanan-yanrenzhong.mp3">
+        </source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
+    <style type="text/css">
+        .rotateImages {
+            -webkit-animation: myRotate 10s linear infinite;
+            animation: myRotate 10s linear infinite;
+        }
 
-<div style="width:100%;max-width:500px;margin:0 auto;position: relative;">
-    <div class="pass-time">
-        <p class="finalText">我们在一起
-            <span class="days" id='ddd'></span>
-            天
-        </p>
+        @-webkit-keyframes myRotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes myRotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <div style="width:100%;max-width:500px;margin:0 auto;position: relative;">
+        <div class="pass-time">
+            <p class="finalText">我们在一起
+                <span class="days" id='ddd'></span>
+                天
+            </p>
+        </div>
+
+        <marquee id="marquee" direction="up" scrollamount="2"
+            style="color:white; height:100px;line-height: 20px;font-size:12px;text-align: center;">
+            送给我<br>心爱的宝贝<br>kelly<br>
+            我喜欢你，就像春归花枝连里，不离不弃<br>
+            我喜欢你，就像六月伏夏未雨，为你安宁<br>
+            我喜欢你，就像秋叶流落晚亭，念你而行<br>
+            我喜欢你，就像冬与雪的生平，上天注定
+        </marquee>
     </div>
+    <p style="text-align: center;">
+        <canvas id="c" height="500" width="500"></canvas>
+        <script>
+            var b = document.body;
+            var c = document.getElementsByTagName('canvas')[0];
+            var a = c.getContext('2d');
+        </script>
+        <script>
 
-    <marquee id="marquee" direction = "up" scrollamount="2" style="color:white; height:100px;line-height: 20px;font-size:12px;text-align: center;">
-        送给我<br>心爱的宝贝<br>kelly<br>
-        我喜欢你，就像春归花枝连里，不离不弃<br>
-        我喜欢你，就像六月伏夏未雨，为你安宁<br>
-        我喜欢你，就像秋叶流落晚亭，念你而行<br>
-        我还是很喜欢你，就像冬与雪的生平，上天注定。
-    </marquee>
-</div>
-<p style="text-align: center;">
-    <canvas id="c" height="500" width="500"></canvas>
-    <script>
-        var b = document.body;
-        var c = document.getElementsByTagName('canvas')[0];
-        var a = c.getContext('2d');
-    </script>
-    <script>
+            with (m = Math) C = cos, S = sin, P = pow, R = random; c.width = c.height = f = 500; h = -250; function p(a, b, c) { if (c > 60) return [S(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) - S(b) * 50, b * f + 50, 625 + C(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) + b * 400, a * 1 - b / 2, a]; A = a * 2 - 1; B = b * 2 - 1; if (A * A + B * B < 1) { if (c > 37) { n = (j = c & 1) ? 6 : 4; o = .5 / (a + .01) + C(b * 125) * 3 - a * 300; w = b * h; return [o * C(n) + w * S(n) + j * 610 - 390, o * S(n) - w * C(n) + 550 - j * 350, 1180 + C(B + A) * 99 - j * 300, .4 - a * .1 + P(1 - B * B, -h * 6) * .15 - a * b * .4 + C(a + b) / 5 + P(C((o * (a + 1) + (B > 0 ? w : -w)) / 25), 30) * .1 * (1 - B * B), o / 1e3 + .7 - o * w * 3e-6] } if (c > 32) { c = c * 1.16 - .15; o = a * 45 - 20; w = b * b * h; z = o * S(c) + w * C(c) + 620; return [o * C(c) - w * S(c), 28 + C(B * .5) * 99 - b * b * b * 60 - z / 2 - h, z, (b * b * .3 + P((1 - (A * A)), 7) * .15 + .3) * b, b * .7] } o = A * (2 - b) * (80 - c * 2); w = 99 - C(A) * 120 - C(b) * (-h - c * 4.9) + C(P(1 - b, 7)) * 50 + c * 2; z = o * S(c) + w * C(c) + 700; return [o * C(c) - w * S(c), B * 99 - C(P(b, 7)) * 50 - c / 3 - z / 1.35 + 450, z, (1 - b / 1.2) * .9 + a * .1, P((1 - b), 20) / 4 + .05] } } setInterval('for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}', 0)
 
-        with (m = Math) C = cos, S = sin, P = pow, R = random; c.width = c.height = f = 500; h = -250; function p(a, b, c) { if (c > 60) return [S(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) - S(b) * 50, b * f + 50, 625 + C(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) + b * 400, a * 1 - b / 2, a]; A = a * 2 - 1; B = b * 2 - 1; if (A * A + B * B < 1) { if (c > 37) { n = (j = c & 1) ? 6 : 4; o = .5 / (a + .01) + C(b * 125) * 3 - a * 300; w = b * h; return [o * C(n) + w * S(n) + j * 610 - 390, o * S(n) - w * C(n) + 550 - j * 350, 1180 + C(B + A) * 99 - j * 300, .4 - a * .1 + P(1 - B * B, -h * 6) * .15 - a * b * .4 + C(a + b) / 5 + P(C((o * (a + 1) + (B > 0 ? w : -w)) / 25), 30) * .1 * (1 - B * B), o / 1e3 + .7 - o * w * 3e-6] } if (c > 32) { c = c * 1.16 - .15; o = a * 45 - 20; w = b * b * h; z = o * S(c) + w * C(c) + 620; return [o * C(c) - w * S(c), 28 + C(B * .5) * 99 - b * b * b * 60 - z / 2 - h, z, (b * b * .3 + P((1 - (A * A)), 7) * .15 + .3) * b, b * .7] } o = A * (2 - b) * (80 - c * 2); w = 99 - C(A) * 120 - C(b) * (-h - c * 4.9) + C(P(1 - b, 7)) * 50 + c * 2; z = o * S(c) + w * C(c) + 700; return [o * C(c) - w * S(c), B * 99 - C(P(b, 7)) * 50 - c / 3 - z / 1.35 + 450, z, (1 - b / 1.2) * .9 + a * .1, P((1 - b), 20) / 4 + .05] } } setInterval('for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}', 0)
-
-    </script><br>
-</p>
+        </script><br>
+    </p>
 </body>
 <script>
-var str = "2020/10/20";
-var d1 = new Date(str);
-var d2 = new Date();
-var d3 = d2.getTime() - d1.getTime();
-var d4 = parseInt(d3/(1000*60*60*24));
-document.getElementById('ddd').innerText = d4;
+    var str = "2020/10/20";
+    var d1 = new Date(str);
+    var d2 = new Date();
+    var d3 = d2.getTime() - d1.getTime();
+    var d4 = parseInt(d3 / (1000 * 60 * 60 * 24));
+    document.getElementById('ddd').innerText = d4;
 </script>
+
 </html>
