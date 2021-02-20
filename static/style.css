@@ -1,9 +1,11 @@
 body{
-    background: #fe909b;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
 }
 .pass-time{
     color:white;
-    font-size:12px;
+    font-size:14px;
     line-height: 20px;
     margin:0 auto;
     text-align: center;
