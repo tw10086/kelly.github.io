@@ -1,12 +1,13 @@
 body{
+    background: url(./bg3.jpg) no-repeat;
+    background-size: cover;
     margin: 0px;
     height: 100%;
     width: 100%;
 }
 .pass-time{
     color:white;
-    font-size:14px;
-    line-height: 20px;
+    font-size:16px;
     margin:0 auto;
     text-align: center;
 }
