@@ -12,45 +12,11 @@
 
 <body>
 
-    <audio class="song-audio-autoplay" controls loop style="display: none;visibility: hidden">
-        <source src="static/wanan-yanrenzhong.mp3">
+    <audio id="song-audio-autoplay" controls loop style="display: none;visibility: hidden">
+        <source src="static/k.mp3">
         </source>
         Your browser isn't invited for super fun audio time.
     </audio>
-    <style type="text/css">
-        .rotateImages {
-            -webkit-animation: myRotate 10s linear infinite;
-            animation: myRotate 10s linear infinite;
-        }
-
-        @-webkit-keyframes myRotate {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            50% {
-                -webkit-transform: rotate(180deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes myRotate {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            50% {
-                -webkit-transform: rotate(180deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-    </style>
 
     <div style="width:100%;max-width:500px;margin:0 auto;position: relative;">
         <div class="pass-time">
@@ -90,6 +56,10 @@
     var d3 = d2.getTime() - d1.getTime();
     var d4 = parseInt(d3 / (1000 * 60 * 60 * 24));
     document.getElementById('ddd').innerText = d4;
+    document.addEventListener('click', function (e) {
+        var a = document.getElementById('song-audio-autoplay');
+        a.play();
+    });
 </script>
 
 </html>
